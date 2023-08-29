@@ -433,7 +433,7 @@ f1() === window; // global object
 
 ### Cómo un método de un objeto
 
-Cuando usamos el keyword `this` dentro de una función que es un método de un objeto, `this` toma hace referencia al objeto sobre el cúal se llamó el método:
+Cuando usamos el keyword `this` dentro de una función que es un método de un objeto,el valor que `this` toma hace referencia al objeto sobre el cúal se llamó el método:
 
 ```javascript
 var o = {
