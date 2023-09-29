@@ -9,9 +9,9 @@ function quickSort(array) {
   if(array.length<=1) return array;
     let arrayDer=[];
     let arrayIzq=[];
-    let arrayIgu=[]
-    let arrayOrdenado=[]
-    let index=0;
+    let arrayIgu=[];
+    let arrayOrdenado=[];
+    let index=0;// Math.floor(Math.random() * array.length)
 
     let pivote= array[index];
 
