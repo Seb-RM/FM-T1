@@ -16,6 +16,15 @@ const {
 
 var countArray = function(array) {
     // Tu código aca:
+    let suma = 0;
+
+    for (let i = 0; i < array.length; i++){
+        if(Array.isArray(array[i])){
+            suma += countArray(array[i]);
+        } else suma += array[i];
+    }
+    
+    return suma;
     
 }
 
@@ -39,7 +48,19 @@ var countArray = function(array) {
 
 var countProps = function(obj) {
     // Tu código aca:
+    let counter = 0;
+    
+    for(let prop in obj){
+        counter++;
 
+        if(typeof obj[prop] === 'object'){
+            if(!Array.isArray(obj[prop])){
+                counter += countProps(obj[prop])
+            }
+        }
+    }
+
+    return counter;
 }
 
 
@@ -54,6 +75,22 @@ var countProps = function(obj) {
 LinkedList.prototype.changeNotNumbers = function(){
     // Tu código aca:
 
+    let contador = 0,
+        current = this.head;
+    
+    while (current) {
+        let numero = Number(current.value);
+
+        if(isNaN(numero)){
+            contador++;
+            current.value = "Kiricocho";
+        }
+
+        current = current.next;
+    }
+
+    return contador;
+
 }
 
 
@@ -67,6 +104,18 @@ LinkedList.prototype.changeNotNumbers = function(){
 
 var mergeQueues = function(queueOne, queueTwo) {
     // Tu código aca:
+    let newQueue = new Queue();
+
+    while(queueOne.size() || queueTwo.size()){
+        let firstQueue = queueOne.dequeue();
+        let secondQueue = queueTwo.dequeue();
+
+        if(firstQueue) newQueue.enqueue(firstQueue);
+        if(secondQueue) newQueue.enqueue(secondQueue);
+
+    }
+
+    return newQueue;
 
 }
 
