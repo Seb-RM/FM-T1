@@ -73,7 +73,7 @@ BinarySearchTree.prototype.contains = function(value){
 }
 
 BinarySearchTree.prototype.depthFirstForEach = function(cb, pedido){
-      if(pedido==="in-order" || pedido=== undefined){
+      if(pedido==="in-order" || pedido === undefined){
          if(this.left && this.left.depthFirstForEach(cb,pedido));
          cb(this.value);
          if(this.right && this.right.depthFirstForEach(cb,pedido));
