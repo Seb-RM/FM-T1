@@ -131,6 +131,9 @@ var mergeQueues = function(queueOne, queueTwo) {
 
 var closureMult = function(multiplier) {
     // Tu código aca:
+    return function(num){
+        return num*multiplier;
+    }
 
 }
 
@@ -139,6 +142,17 @@ var closureMult = function(multiplier) {
 BinarySearchTree.prototype.sum = function() {
     // Tu código aca:
 
+    if(!this.left && !this.right) return this.value;
+    if(this.left && !this.right) return this.value + this.left.sum();
+    if(!this.left && this.right) return this.value + this.right.sum();
+    if(this.left && this.right) return this.value + this.left.sum() + this.right.sum();
+
+    // otra forma
+    // let counter = this.value;
+    // if(this.left !== null) counter += this.left.sum();
+    // if(this.right !== null) counter +=  this.right.sum();
+
+    // return counter;
 }
 
 module.exports = {
